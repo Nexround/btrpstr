@@ -53,6 +53,35 @@ is highly recommended in any case, even if you're not after posters).
 Everything is likely going to change a lot (see the comments with TODOs in the
 class file).
 
+### RACE Paper Poster
+
+The customized poster uses the A0 portrait option of `btrpstr` (841 x 1189 mm).
+`posterv.tex` is the entry point, and `race_poster.tex` contains the editable
+poster content. The original vertical example is preserved in
+`templates/posterv_example.tex`.
+
+Build the PDF and PNG preview with the installed XeLaTeX and Poppler tools:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_poster.ps1
+```
+
+The deliverables are `output/pdf/RACE_poster_A0_portrait.pdf` and
+`output/pdf/RACE_poster_A0_portrait.png`. All charts remain vector artwork in
+the PDF. The code QR links to the repository named in the paper.
+
+`assets/race/reported_data.json` records chart values and their source tables
+in the supplied arXiv v2 PDF. Accuracy results, suppression budgets, and scoring
+costs retain the paper's experimental settings. The comprehension correctness
+scores apply to the subset of outputs still containing comprehensions. The
+approximately 230-fold reduction compares extra scoring FLOPs; it is not a
+wall-clock speedup for the full RACE pipeline.
+
+To regenerate the chart assets, run `python scripts/prepare_assets.py` with
+Python 3 and XeLaTeX available. This script uses only Python's standard library.
+The original paper path in the data manifest is needed to re-extract Figure 1;
+the included figure PDF is sufficient for normal poster builds.
+
 ### License
 
 This repository and all work in it is relased to public domain.

@@ -1,0 +1,136 @@
+{
+  "source": "C:\\Users\\19015\\Documents\\2608.24758v2.pdf",
+  "qwen_code_rsf_mlp": {
+    "source_table": 21,
+    "budget": "top 1% MLP neurons per layer",
+    "benchmarks": [
+      "MBPP+",
+      "HumanEval+",
+      "MATH-500",
+      "AMC",
+      "MMLU-Redux",
+      "GPQA"
+    ],
+    "baseline": [
+      82.28,
+      83.54,
+      94.4,
+      87.31,
+      81.37,
+      45.45
+    ],
+    "race": [
+      3.17,
+      1.22,
+      85.41,
+      75.11,
+      82.35,
+      52.53
+    ]
+  },
+  "isi_mlp": {
+    "sources": "Figure 3; Tables 21 and 23",
+    "methods": [
+      "GxAct",
+      "AttnLRP",
+      "Act. Mean",
+      "Emp. Mean",
+      "Emp. SNR",
+      "Neg. CAM",
+      "RACE"
+    ],
+    "code": [
+      1.29,
+      1.07,
+      2.22,
+      2.26,
+      0,
+      1.04,
+      2.65
+    ],
+    "math": [
+      1.46,
+      0.78,
+      0.75,
+      1.36,
+      0,
+      0,
+      1.76
+    ]
+  },
+  "distribution_mlp": {
+    "source_table": 4,
+    "corpora": [
+      "MBPP+",
+      "MATH-500",
+      "WikiText-2"
+    ],
+    "code_rsf_delta_ppl": [
+      77.31,
+      23.98,
+      2.76
+    ],
+    "math_rsf_delta_ppl": [
+      25.41,
+      129.04,
+      2.6
+    ]
+  },
+  "comprehensions": {
+    "source_table": 5,
+    "budget": "K_sel=10 per layer",
+    "benchmarks": [
+      "MBPP+",
+      "HumanEval+"
+    ],
+    "baseline_records": [
+      55,
+      36
+    ],
+    "pycomp_records": [
+      16,
+      14
+    ],
+    "baseline_pass_subset": [
+      92.73,
+      86.11
+    ],
+    "pycomp_pass_subset": [
+      87.5,
+      85.71
+    ]
+  },
+  "extra_scoring_flops": {
+    "source_tables": [
+      7,
+      18
+    ],
+    "gflops": {
+      "GxAct": 18772,
+      "AttnLRP": 18815,
+      "RDA": 81.545
+    },
+    "protocol": "Qwen3-4B-it; 64 input tokens / 16 output tokens; excludes CAM, NIG, logging and CPU aggregation"
+  },
+  "olmo_math_rsf_mlp": {
+    "source_table": 3,
+    "benchmarks": [
+      "MATH-500",
+      "AMC",
+      "GPQA",
+      "MMLU-Redux"
+    ],
+    "baseline": [
+      86.4,
+      79.85,
+      48.6,
+      84.7
+    ],
+    "top5pct": [
+      6.72,
+      7.46,
+      37.79,
+      77.79
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+\documentclass[border=5pt]{standalone}
+\usepackage{fontspec,graphicx,tikz}
+\setmainfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf]
+\definecolor{navy}{HTML}{152D43}
+\definecolor{teal}{HTML}{087F8C}
+\definecolor{orange}{HTML}{E78335}
+\definecolor{gray}{HTML}{DCE4E9}
+\definecolor{grid}{HTML}{E8EDF1}
+\begin{document}\color{navy}
+\begin{tikzpicture}[x=1cm,y=.65cm,every node/.style={font=\fontsize{18}{22}\selectfont}]
+\draw[grid] (6.000,0) -- (6.000,9.5);
+\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (6.000,-0.350) {0};
+\draw[grid] (11.000,0) -- (11.000,9.5);
+\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (11.000,-0.350) {25};
+\draw[grid] (16.000,0) -- (16.000,9.5);
+\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (16.000,-0.350) {50};
+\draw[grid] (21.000,0) -- (21.000,9.5);
+\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (21.000,-0.350) {75};
+\draw[grid] (26.000,0) -- (26.000,9.5);
+\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (26.000,-0.350) {100};
+\path[fill=gray] (6.000,10.160) rectangle (6.600,10.440);
+\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (6.800,10.300) {Original model};
+\path[fill=teal] (14.000,10.160) rectangle (14.600,10.440);
+\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (14.800,10.300) {RACE + RSF suppression};
+\node[anchor=east,text=orange,font=\fontsize{18}{22}\selectfont\bfseries] at (5.650,8.800) {MBPP+};
+\path[fill=gray] (6.000,8.860) rectangle (22.456,9.350);
+\path[fill=teal] (6.000,8.250) rectangle (6.634,8.740);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (22.556,9.100) {82.28};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (6.734,8.500) {3.17};
+\node[anchor=east,text=orange,font=\fontsize{18}{22}\selectfont\bfseries] at (5.650,7.300) {HumanEval+};
+\path[fill=gray] (6.000,7.360) rectangle (22.708,7.850);
+\path[fill=teal] (6.000,6.750) rectangle (6.244,7.240);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (22.808,7.600) {83.54};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (6.344,7.000) {1.22};
+\node[anchor=east,text=navy,font=\fontsize{18}{22}\selectfont] at (5.650,5.800) {MATH-500};
+\path[fill=gray] (6.000,5.860) rectangle (24.880,6.350);
+\path[fill=teal] (6.000,5.250) rectangle (23.082,5.740);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (24.980,6.100) {94.40};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (23.182,5.500) {85.41};
+\node[anchor=east,text=navy,font=\fontsize{18}{22}\selectfont] at (5.650,4.300) {AMC};
+\path[fill=gray] (6.000,4.360) rectangle (23.462,4.850);
+\path[fill=teal] (6.000,3.750) rectangle (21.022,4.240);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (23.562,4.600) {87.31};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (21.122,4.000) {75.11};
+\node[anchor=east,text=navy,font=\fontsize{18}{22}\selectfont] at (5.650,2.800) {MMLU-Redux};
+\path[fill=gray] (6.000,2.860) rectangle (22.274,3.350);
+\path[fill=teal] (6.000,2.250) rectangle (22.470,2.740);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (22.374,3.100) {81.37};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (22.570,2.500) {82.35};
+\node[anchor=east,text=navy,font=\fontsize{18}{22}\selectfont] at (5.650,1.300) {GPQA};
+\path[fill=gray] (6.000,1.360) rectangle (15.090,1.850);
+\path[fill=teal] (6.000,0.750) rectangle (16.506,1.240);
+\node[anchor=west,text=navy,font=\fontsize{14}{18}\selectfont] at (15.190,1.600) {45.45};
+\node[anchor=west,text=teal,font=\fontsize{14}{18}\selectfont\bfseries] at (16.606,1.000) {52.53};
+\node[anchor=center,text=navy,font=\fontsize{19}{23}\selectfont] at (16.000,-1.950) {Benchmark accuracy (\%)};
+\end{tikzpicture}\end{document}
