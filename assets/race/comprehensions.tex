@@ -1,34 +1,34 @@
 \documentclass[border=5pt]{standalone}
 \usepackage{fontspec,graphicx,tikz}
 \setmainfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf]
-\definecolor{navy}{HTML}{152D43}
-\definecolor{teal}{HTML}{087F8C}
-\definecolor{orange}{HTML}{E78335}
-\definecolor{gray}{HTML}{DCE4E9}
-\definecolor{grid}{HTML}{E8EDF1}
-\begin{document}\color{navy}
+\definecolor{ink}{HTML}{0E3B38}
+\definecolor{pgreen}{HTML}{446F4E}
+\definecolor{firered}{HTML}{D12632}
+\definecolor{gray}{HTML}{CFE3E1}
+\definecolor{grid}{HTML}{E1EEED}
+\begin{document}\color{ink}
 \begin{tikzpicture}[x=1cm,y=.65cm,every node/.style={font=\fontsize{18}{22}\selectfont}]
 \draw[grid] (6.000,0) -- (6.000,3.8);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (6.000,-0.350) {0};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (6.000,-0.350) {0};
 \draw[grid] (12.667,0) -- (12.667,3.8);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (12.667,-0.350) {20};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (12.667,-0.350) {20};
 \draw[grid] (19.333,0) -- (19.333,3.8);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (19.333,-0.350) {40};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (19.333,-0.350) {40};
 \draw[grid] (26.000,0) -- (26.000,3.8);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (26.000,-0.350) {60};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (26.000,-0.350) {60};
 \path[fill=gray] (6.000,4.510) rectangle (6.600,4.790);
-\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (6.800,4.650) {Original model};
-\path[fill=orange] (15.000,4.510) rectangle (15.600,4.790);
-\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (15.800,4.650) {PyComp-1K + RSF};
-\node[anchor=east,text=navy,font=\fontsize{19}{23}\selectfont] at (5.600,3.000) {MBPP+};
+\node[anchor=west,text=ink,font=\fontsize{17}{21}\selectfont] at (6.800,4.650) {Original model};
+\path[fill=firered] (15.000,4.510) rectangle (15.600,4.790);
+\node[anchor=west,text=ink,font=\fontsize{17}{21}\selectfont] at (15.800,4.650) {PyComp-1K + RSF};
+\node[anchor=east,text=ink,font=\fontsize{19}{23}\selectfont] at (5.600,3.000) {MBPP+};
 \path[fill=gray] (6.000,3.040) rectangle (24.333,3.660);
-\path[fill=orange] (6.000,2.340) rectangle (11.333,2.960);
-\node[anchor=west,text=navy,font=\fontsize{18}{22}\selectfont] at (24.483,3.350) {55};
-\node[anchor=west,text=orange,font=\fontsize{19}{23}\selectfont\bfseries] at (11.483,2.650) {16  (-70.9\%)};
-\node[anchor=east,text=navy,font=\fontsize{19}{23}\selectfont] at (5.600,1.000) {HumanEval+};
+\path[fill=firered] (6.000,2.340) rectangle (11.333,2.960);
+\node[anchor=west,text=ink,font=\fontsize{18}{22}\selectfont] at (24.483,3.350) {55};
+\node[anchor=west,text=firered,font=\fontsize{19}{23}\selectfont\bfseries] at (11.483,2.650) {16  (-70.9\%)};
+\node[anchor=east,text=ink,font=\fontsize{19}{23}\selectfont] at (5.600,1.000) {HumanEval+};
 \path[fill=gray] (6.000,1.040) rectangle (18.000,1.660);
-\path[fill=orange] (6.000,0.340) rectangle (10.667,0.960);
-\node[anchor=west,text=navy,font=\fontsize{18}{22}\selectfont] at (18.150,1.350) {36};
-\node[anchor=west,text=orange,font=\fontsize{19}{23}\selectfont\bfseries] at (10.817,0.650) {14  (-61.1\%)};
-\node[anchor=center,text=navy,font=\fontsize{17}{21}\selectfont] at (16.000,-1.950) {Outputs containing a Python comprehension};
+\path[fill=firered] (6.000,0.340) rectangle (10.667,0.960);
+\node[anchor=west,text=ink,font=\fontsize{18}{22}\selectfont] at (18.150,1.350) {36};
+\node[anchor=west,text=firered,font=\fontsize{19}{23}\selectfont\bfseries] at (10.817,0.650) {14  (-61.1\%)};
+\node[anchor=center,text=ink,font=\fontsize{17}{21}\selectfont] at (16.000,-1.950) {Outputs containing a Python comprehension};
 \end{tikzpicture}\end{document}

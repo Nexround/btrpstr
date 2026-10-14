@@ -1,59 +1,59 @@
 \documentclass[border=5pt]{standalone}
 \usepackage{fontspec,graphicx,tikz}
 \setmainfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf]
-\definecolor{navy}{HTML}{152D43}
-\definecolor{teal}{HTML}{087F8C}
-\definecolor{orange}{HTML}{E78335}
-\definecolor{gray}{HTML}{DCE4E9}
-\definecolor{grid}{HTML}{E8EDF1}
-\begin{document}\color{navy}
+\definecolor{ink}{HTML}{0E3B38}
+\definecolor{pgreen}{HTML}{446F4E}
+\definecolor{firered}{HTML}{D12632}
+\definecolor{gray}{HTML}{CFE3E1}
+\definecolor{grid}{HTML}{E1EEED}
+\begin{document}\color{ink}
 \begin{tikzpicture}[x=1cm,y=.65cm,every node/.style={font=\fontsize{18}{22}\selectfont}]
 \draw[grid] (1,0.0) -- (27,0.0);
-\node[anchor=east,text=navy,font=\fontsize{16}{20}\selectfont] at (0.750,0.000) {0};
+\node[anchor=east,text=ink,font=\fontsize{16}{20}\selectfont] at (0.750,0.000) {0};
 \draw[grid] (1,2.1) -- (27,2.1);
-\node[anchor=east,text=navy,font=\fontsize{16}{20}\selectfont] at (0.750,2.100) {1};
+\node[anchor=east,text=ink,font=\fontsize{16}{20}\selectfont] at (0.750,2.100) {1};
 \draw[grid] (1,4.2) -- (27,4.2);
-\node[anchor=east,text=navy,font=\fontsize{16}{20}\selectfont] at (0.750,4.200) {2};
+\node[anchor=east,text=ink,font=\fontsize{16}{20}\selectfont] at (0.750,4.200) {2};
 \draw[grid] (1,6.300000000000001) -- (27,6.300000000000001);
-\node[anchor=east,text=navy,font=\fontsize{16}{20}\selectfont] at (0.750,6.300) {3};
-\path[fill=teal] (1.550,0.000) rectangle (2.420,2.709);
-\path[fill=orange] (2.580,0.000) rectangle (3.450,3.066);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (1.900,2.889) {1.29};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (3.100,3.246) {1.46};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (2.500,-0.200) {GxAct};
-\path[fill=teal] (5.300,0.000) rectangle (6.170,2.247);
-\path[fill=orange] (6.330,0.000) rectangle (7.200,1.638);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (5.650,2.427) {1.07};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (6.850,1.818) {0.78};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (6.250,-0.200) {AttnLRP};
-\path[fill=teal] (9.050,0.000) rectangle (9.920,4.662);
-\path[fill=orange] (10.080,0.000) rectangle (10.950,1.575);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (9.400,4.842) {2.22};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (10.600,1.755) {0.75};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (10.000,-0.200) {Act. Mean};
-\path[fill=teal] (12.800,0.000) rectangle (13.670,4.746);
-\path[fill=orange] (13.830,0.000) rectangle (14.700,2.856);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (13.150,4.926) {2.26};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (14.350,3.036) {1.36};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (13.750,-0.200) {Emp. Mean};
-\path[fill=teal] (16.550,0.000) rectangle (17.420,0.000);
-\path[fill=orange] (17.580,0.000) rectangle (18.450,0.000);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (16.900,0.180) {0.00};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (18.100,0.180) {0.00};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (17.500,-0.200) {Emp. SNR};
-\path[fill=teal] (20.300,0.000) rectangle (21.170,2.184);
-\path[fill=orange] (21.330,0.000) rectangle (22.200,0.000);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (20.650,2.364) {1.04};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (21.850,0.180) {0.00};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (21.250,-0.200) {Neg. CAM};
-\path[fill=teal] (24.050,0.000) rectangle (24.920,5.565);
-\path[fill=orange] (25.080,0.000) rectangle (25.950,3.696);
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (24.400,5.745) {2.65};
-\node[anchor=south,text=navy,font=\fontsize{14}{18}\selectfont] at (25.600,3.876) {1.76};
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont\bfseries] at (25.000,-0.200) {RACE};
-\path[fill=teal] (4.000,6.910) rectangle (4.600,7.190);
-\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (4.800,7.050) {Code target};
-\path[fill=orange] (14.000,6.910) rectangle (14.600,7.190);
-\node[anchor=west,text=navy,font=\fontsize{17}{21}\selectfont] at (14.800,7.050) {Math target};
-\node[anchor=center,text=navy,font=\fontsize{17}{21}\selectfont] at (14.000,-1.950) {Intervention Specificity Index (ISI); higher is better};
+\node[anchor=east,text=ink,font=\fontsize{16}{20}\selectfont] at (0.750,6.300) {3};
+\path[fill=pgreen] (1.550,0.000) rectangle (2.420,2.709);
+\path[fill=firered] (2.580,0.000) rectangle (3.450,3.066);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (1.900,2.889) {1.29};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (3.100,3.246) {1.46};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (2.500,-0.200) {GxAct};
+\path[fill=pgreen] (5.300,0.000) rectangle (6.170,2.247);
+\path[fill=firered] (6.330,0.000) rectangle (7.200,1.638);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (5.650,2.427) {1.07};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (6.850,1.818) {0.78};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (6.250,-0.200) {AttnLRP};
+\path[fill=pgreen] (9.050,0.000) rectangle (9.920,4.662);
+\path[fill=firered] (10.080,0.000) rectangle (10.950,1.575);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (9.400,4.842) {2.22};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (10.600,1.755) {0.75};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (10.000,-0.200) {Act. Mean};
+\path[fill=pgreen] (12.800,0.000) rectangle (13.670,4.746);
+\path[fill=firered] (13.830,0.000) rectangle (14.700,2.856);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (13.150,4.926) {2.26};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (14.350,3.036) {1.36};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (13.750,-0.200) {Emp. Mean};
+\path[fill=pgreen] (16.550,0.000) rectangle (17.420,0.000);
+\path[fill=firered] (17.580,0.000) rectangle (18.450,0.000);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (16.900,0.180) {0.00};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (18.100,0.180) {0.00};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (17.500,-0.200) {Emp. SNR};
+\path[fill=pgreen] (20.300,0.000) rectangle (21.170,2.184);
+\path[fill=firered] (21.330,0.000) rectangle (22.200,0.000);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (20.650,2.364) {1.04};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (21.850,0.180) {0.00};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (21.250,-0.200) {Neg. CAM};
+\path[fill=pgreen] (24.050,0.000) rectangle (24.920,5.565);
+\path[fill=firered] (25.080,0.000) rectangle (25.950,3.696);
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (24.400,5.745) {2.65};
+\node[anchor=south,text=ink,font=\fontsize{14}{18}\selectfont] at (25.600,3.876) {1.76};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont\bfseries] at (25.000,-0.200) {RACE};
+\path[fill=pgreen] (4.000,6.910) rectangle (4.600,7.190);
+\node[anchor=west,text=ink,font=\fontsize{17}{21}\selectfont] at (4.800,7.050) {Code target};
+\path[fill=firered] (14.000,6.910) rectangle (14.600,7.190);
+\node[anchor=west,text=ink,font=\fontsize{17}{21}\selectfont] at (14.800,7.050) {Math target};
+\node[anchor=center,text=ink,font=\fontsize{17}{21}\selectfont] at (14.000,-1.950) {Intervention Specificity Index (ISI); higher is better};
 \end{tikzpicture}\end{document}

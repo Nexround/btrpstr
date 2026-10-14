@@ -1,29 +1,29 @@
 \documentclass[border=5pt]{standalone}
 \usepackage{fontspec,graphicx,tikz}
 \setmainfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf]
-\definecolor{navy}{HTML}{152D43}
-\definecolor{teal}{HTML}{087F8C}
-\definecolor{orange}{HTML}{E78335}
-\definecolor{gray}{HTML}{DCE4E9}
-\definecolor{grid}{HTML}{E8EDF1}
-\begin{document}\color{navy}
+\definecolor{ink}{HTML}{0E3B38}
+\definecolor{pgreen}{HTML}{446F4E}
+\definecolor{firered}{HTML}{D12632}
+\definecolor{gray}{HTML}{CFE3E1}
+\definecolor{grid}{HTML}{E1EEED}
+\begin{document}\color{ink}
 \begin{tikzpicture}[x=1cm,y=.65cm,every node/.style={font=\fontsize{18}{22}\selectfont}]
 \draw[grid] (6.000,0) -- (6.000,5.6);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (6.000,-0.350) {0};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (6.000,-0.350) {0};
 \draw[grid] (12.667,0) -- (12.667,5.6);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (12.667,-0.350) {50};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (12.667,-0.350) {50};
 \draw[grid] (19.333,0) -- (19.333,5.6);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (19.333,-0.350) {100};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (19.333,-0.350) {100};
 \draw[grid] (26.000,0) -- (26.000,5.6);
-\node[anchor=north,text=navy,font=\fontsize{16}{20}\selectfont] at (26.000,-0.350) {150};
-\node[anchor=east,text=navy,font=\fontsize{20}{24}\selectfont] at (5.600,4.700) {GxAct};
+\node[anchor=north,text=ink,font=\fontsize{16}{20}\selectfont] at (26.000,-0.350) {150};
+\node[anchor=east,text=ink,font=\fontsize{20}{24}\selectfont] at (5.600,4.700) {GxAct};
 \path[fill=gray] (6.000,4.300) rectangle (25.239,5.100);
-\node[anchor=west,text=navy,font=\fontsize{19}{23}\selectfont\bfseries] at (25.389,4.700) {144.29$\times$};
-\node[anchor=east,text=navy,font=\fontsize{20}{24}\selectfont] at (5.600,2.900) {AttnLRP};
+\node[anchor=west,text=ink,font=\fontsize{19}{23}\selectfont\bfseries] at (25.389,4.700) {144.29$\times$};
+\node[anchor=east,text=ink,font=\fontsize{20}{24}\selectfont] at (5.600,2.900) {AttnLRP};
 \path[fill=gray] (6.000,2.500) rectangle (25.283,3.300);
-\node[anchor=west,text=navy,font=\fontsize{19}{23}\selectfont\bfseries] at (25.433,2.900) {144.62$\times$};
-\node[anchor=east,text=navy,font=\fontsize{20}{24}\selectfont\bfseries] at (5.600,1.100) {RDA};
-\path[fill=teal] (6.000,0.700) rectangle (6.084,1.500);
-\node[anchor=west,text=teal,font=\fontsize{19}{23}\selectfont\bfseries] at (6.234,1.100) {0.63$\times$};
-\node[anchor=center,text=navy,font=\fontsize{17}{21}\selectfont] at (16.000,-1.950) {Extra scoring FLOPs / forward-inference FLOPs};
+\node[anchor=west,text=ink,font=\fontsize{19}{23}\selectfont\bfseries] at (25.433,2.900) {144.62$\times$};
+\node[anchor=east,text=ink,font=\fontsize{20}{24}\selectfont\bfseries] at (5.600,1.100) {RDA};
+\path[fill=pgreen] (6.000,0.700) rectangle (6.084,1.500);
+\node[anchor=west,text=pgreen,font=\fontsize{19}{23}\selectfont\bfseries] at (6.234,1.100) {0.63$\times$};
+\node[anchor=center,text=ink,font=\fontsize{17}{21}\selectfont] at (16.000,-1.950) {Extra scoring FLOPs / forward-inference FLOPs};
 \end{tikzpicture}\end{document}
