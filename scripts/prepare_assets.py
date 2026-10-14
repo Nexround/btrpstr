@@ -62,7 +62,8 @@ s=horizontal_grid(0,9.5,100,[0,25,50,75,100])
 s+=legend(6,10.3,'gray','Original model')+legend(14,10.3,'firered','RACE + RSF suppression')
 for i,(name,a,b) in enumerate(zip(d['benchmarks'],d['baseline'],d['race'])):
     y=8.8-i*1.5
-    s+=node(5.65,y,name,'east','firered' if i<2 else 'ink',bold=i<2)
+    label={'MBPP+':'MBPP+ (Target)','HumanEval+':'HumanEval+ (Code OOD)'}.get(name,name)
+    s+=node(5.65,y,label,'east','firered' if i<2 else 'ink',bold=i<2)
     s+=rect(6,y+.06,6+.2*a,y+.55,'gray')+rect(6,y-.55,6+.2*b,y-.06,'firered')
     s+=node(6+.2*a+.1,y+.30,f'{a:.2f}','west',size=14)
     s+=node(6+.2*b+.1,y-.30,f'{b:.2f}','west','firered',14,True)
@@ -80,7 +81,7 @@ for i,(name,a,b) in enumerate(zip(d['methods'],d['code'],d['math'])):
     s+=node(x+.6,b*2.1+.18,f'{b:.2f}','south',size=14)
     s+=node(x,-.2,name,'north',size=16,bold=name=='RACE')
 s+=legend(4,7.05,'pgreen','Code target')+legend(14,7.05,'firered','Math target')
-s+=node(14,-1.95,'Intervention Specificity Index (ISI); higher is better',size=17)
+s+=node(14,-1.95,r'Intervention Specificity Index (ISI $\uparrow$)',size=17)
 compile_asset('isi',s)
 
 d=data['distribution_mlp'];s=''
@@ -105,7 +106,7 @@ for i,(name,a,b) in enumerate(zip(d['benchmarks'],d['baseline_records'],d['pycom
     s+=rect(6,y+.04,6+a/3,y+.66,'gray')+rect(6,y-.66,6+b/3,y-.04,'firered')
     s+=node(6+a/3+.15,y+.35,str(a),'west',size=18)
     s+=node(6+b/3+.15,y-.35,rf'{b}  ({(b/a-1)*100:.1f}\%)','west','firered',19,True)
-s+=node(16,-1.95,'Outputs containing a Python comprehension',size=17)
+s+=node(16,-1.95,r'Solutions containing $\geq$1 Python comprehension (count)',size=17)
 compile_asset('comprehensions',s)
 
 s=horizontal_grid(0,5.6,150,[0,50,100,150])

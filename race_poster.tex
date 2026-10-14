@@ -125,52 +125,52 @@ S_{\mathrm{spec}}^\ell=\operatorname{First}_{K_{\mathrm{sel}}}(\Pi_{\mathrm{RSF}
 \]
 Prevents baseline linguistic collapse during subsequent behavioral interventions.
 \end{headerbox}
-\newpostercol{results1}{start={([xshift=2cm,yshift=-63.1cm]poster.north west)},width=39.15cm}
+\newpostercol{results1}{start={([xshift=2cm,yshift=-64.3cm]poster.north west)},width=39.15cm}
 \newpostercol{results2}{start={([xshift=42.95cm,yshift=-75.2cm]poster.north west)},width=39.15cm}
-\begin{headerbox}{selectivity}{col=results1,header={03\quad Selective Suppression: Broad to Narrow},header font=\postersectionfont,
+\begin{headerbox}{selectivity}{col=results1,header={03\quad Targeted Suppression: Broad to Narrow},header font=\postersectionfont,
  header style={fill=pgreen,text=white},body style={fill=white},sep=.65cm,font=\bodyfont}
-\textbf{Code-selected MLP neurons:} strong drops on the target benchmark and the same-domain out-of-distribution (OOD) benchmark (HumanEval+ for code, AMC for math), with much smaller effects on non-target benchmarks.
+\textbf{Domain-level precision:} suppressing the top-1\% code-selected MLP neurons collapses the target (\textbf{MBPP+}, $-96\%$) and same-domain OOD (\textbf{HumanEval+}, $-99\%$) benchmarks, with small effects elsewhere.
 \par\vspace{.25cm}
 \includegraphics[width=\linewidth]{assets/race/code_accuracy.pdf}\par
-\sourcecaption{Qwen3-4B-it; MBPP+ scoring, WikiText-2 RSF, top-1\% MLP suppression per layer. Accuracy is averaged over three runs; code targets are red.}
+\sourcecaption{Qwen3-4B-it, 3-run average; neurons ranked on MBPP+ with WikiText-2 RSF. Red labels: target and OOD code benchmarks.}
 \vspace{.4cm}
+\subhead{Highest Specificity at <1\% of Gradient Cost}
 {\centering\includegraphics[width=.94\linewidth]{assets/race/isi.pdf}\par}
-\sourcecaption{Same top-1\% MLP budget with RSF. Intervention Specificity Index (ISI) $=\max\{0,\log(\Delta_T/(\Delta_G+\delta))\}$, where $\Delta_T$ and $\Delta_G$ are the average relative accuracy drops on target-domain (incl.\ OOD) and general benchmarks. Higher ISI indicates stronger target-domain suppression with minimal non-target degradation.}
-\subhead{From Broad Capability to a Narrow Behavior}
-{\smallfont\textbf{PyComp-1K:} 1,000 AST-verified Python statements targeting comprehensions. Suppress $K_{\mathrm{sel}}=10$ neurons per layer after RSF.\par}
+\sourcecaption{Qwen3-4B-it, top-1\% MLP budget with RSF; scoring costs 0.63$\times$ vs.\ $\sim$144$\times$ forward FLOPs for GxAct/AttnLRP. ISI $=\max\{0,\log(\Delta_T/(\Delta_G+\delta))\}$, where $\Delta_T$ and $\Delta_G$ are the average relative accuracy drops on target-domain (incl.\ OOD) and general benchmarks.}
+\subhead{Fine-Grained Steering: Suppressing a Specific Coding Style}
+{\smallfont \textbf{PyComp-1K} (1,000 AST-verified comprehensions): suppressing $K_{\mathrm{sel}}=10$ neurons per layer after RSF cuts comprehension usage by \textbf{61\%--71\%}.\par}
 \vspace{.25cm}
 {\centering\includegraphics[width=.94\linewidth]{assets/race/comprehensions.pdf}\par}
-\sourcecaption{Qwen3-4B-it; number of outputs containing at least one comprehension.}
 \vspace{.25cm}
-{\smallfont Functional correctness on the \textbf{remaining comprehension-using solutions}: MBPP+ 92.73\% $\to$ 87.50\%; HumanEval+ 86.11\% $\to$ 85.71\% (conditional subset scores).\par}
+{\smallfont \textbf{Style shifts, function stays:} accuracy on remaining comprehension-using solutions is preserved (MBPP+ 92.73\% $\to$ 87.50\%; HumanEval+ 86.11\% $\to$ 85.71\%).\par}
 \end{headerbox}
-\begin{headerbox}{distribution}{col=results2,header={04\quad Verify the Distributional Effect},header font=\postersectionfont,
+\begin{headerbox}{distribution}{col=results2,header={04\quad Distributional Verification and Scaling to 32B},header font=\postersectionfont,
  header style={fill=pgreen,text=white},body style={fill=white},sep=.65cm,font=\bodyfont}
-Target-corpus perplexity rises sharply; the general reference corpus changes by less than 3\%.
+\textbf{Asymmetric shift:} perplexity rises sharply on the matched target corpus (\textbf{+77.31\%} MBPP+, \textbf{+129.04\%} MATH-500) but changes by less than 3\% on WikiText-2.
 \par\vspace{.15cm}
 {\centering\includegraphics[width=.92\linewidth]{assets/race/distribution.pdf}\par}
-\sourcecaption{Qwen3-4B-it, RSF, top-1\% MLP suppression per layer. Relative perplexity change; each color uses its own target scoring set.}
-\subhead{The Effect Extends to 32B Models}
-{\smallfont OLMo-3.1-32B-it, math scoring + WikiText-2 RSF; top-5\% MLP suppression per layer.\par}
+\sourcecaption{Qwen3-4B-it, top-1\% MLP, WikiText-2 RSF. Green/red: MBPP+/MATH-500 scoring.}
+\subhead{Scalability: Consistent Selectivity on 32B Models}
+{\smallfont OLMo-3.1-32B-it, math scoring + RSF, top-5\% MLP: math drops by \textbf{>90\%}.\par}
 \vspace{.15cm}
 {\centering\fontsize{30}{38}\selectfont\setlength{\tabcolsep}{.35cm}\renewcommand{\arraystretch}{1.0}
-\begin{tabular}{@{}lrr@{}}
-\toprule Benchmark & Original & Suppressed\\\midrule
-MATH-500 (target) & 86.40 & \textbf{6.72}\\
-AMC (OOD) & 79.85 & \textbf{7.46}\\
-GPQA & 48.60 & 37.79\\
-MMLU-Redux & 84.70 & 77.79\\\bottomrule
+\begin{tabular}{@{}lrrr@{}}
+\toprule Benchmark & Original & Suppressed & Rel.\ $\Delta$\\\midrule
+MATH-500 (target) & 86.40 & \textbf{6.72} & \textbf{$-$92.2\%}\\
+AMC (OOD) & 79.85 & \textbf{7.46} & \textbf{$-$90.7\%}\\
+GPQA & 48.60 & 37.79 & $-$22.2\%\\
+MMLU-Redux & 84.70 & 77.79 & $-$8.2\%\\\bottomrule
 \end{tabular}\par}
 \vspace{.25cm}
 % {\setlength{\fboxsep}{.3cm}\colorbox{paper}{\parbox{\dimexpr\linewidth-.6cm\relax}{\smallfont\textbf{Scope:} domain-specific effects are stronger in MLPs. Attention channels show greater cross-domain overlap, and RSF yields weaker attention specificity. Linear projections can miss nonlinear interactions.\par}}}
 \end{headerbox}
-\newpostercol{refcol}{start={([xshift=42.95cm,yshift=-104.3cm]poster.north west)},width=39.15cm}
+\newpostercol{refcol}{start={([xshift=42.95cm,yshift=-106.0cm]poster.north west)},width=39.15cm}
 \begin{headerbox}{refbox}{col=refcol,header={Paper, Code, and Contact},header font=\postersectionfont,
  header style={fill=pgreen,text=white},body style={fill=white,minimum height=0pt},sep=.65cm,font=\bodyfont}
 \begin{center}
 \begin{tabular}{@{}c@{\hspace{2.8cm}}c@{}}
-\qrcode[height=4.2cm]{https://arxiv.org/abs/2608.24758} &
-\qrcode[height=4.2cm]{https://github.com/Nexround/RACE}\\[-.1cm]
+\qrcode[height=3.6cm]{https://arxiv.org/abs/2608.24758} &
+\qrcode[height=3.6cm]{https://github.com/Nexround/RACE}\\[-.1cm]
 \textbf{Paper} & \textbf{Code}
 \end{tabular}
 \end{center}
